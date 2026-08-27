@@ -1,0 +1,9 @@
+build/
+*.class
+postgresql.jar
+.DS_Store
+.idea/
+.vscode/
+
+# scratch, not for pushing
+NOTES.md
