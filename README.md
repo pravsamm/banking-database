@@ -51,10 +51,17 @@ Requires Java 17 or later and PostgreSQL. I used Postgres.app on macOS.
 
 1) Create the database:
 createuser -s bankapp
+
 createdb -O bankapp bankdb
 
 2) Load the schema and starting data:
 psql -d bankdb -f sql/schema.sql -f sql/seed_data.sql
+
+If createuser and psql are not found, add Postgres.app's tools to your PATH:
+sudo mkdir -p /etc/paths.d
+echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp
+
+Then open a new terminal.
 
 3) Download the PostgreSQL JDBC driver into the project folder:
 curl -L -o postgresql.jar https://jdbc.postgresql.org/download/postgresql-42.7.4.jar
